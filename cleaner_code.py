@@ -45,21 +45,12 @@ def _match(*a, **kw):
 		if i in a[1]:
 			return_list.append(i)
 	return return_list
-#NotImplemented
-# _unique(list t1, list t2)
-def _unique(*a, **kw):
-	return_list = set()
-	for i in a[0]:
-		return_list.add(i)
-	for i in a[1]:
-		return_list.add(i)
-	return return_list
 
-def gen_ran_len_lst():
-	"""Returns a random length list of random numbers."""
+def gen_ran_len_lst(n=500):
+	"""Returns a random 0, n length list of 0, n random numbers."""
 	lst = []
-	for i in range(random.randrange(0, 1000)):
-		lst.append(random.randrange(0, 1000))
+	for i in range(random.randrange(0, n)):
+		lst.append(random.randrange(0, n))
 	return lst
 
 def _diff(*a):
