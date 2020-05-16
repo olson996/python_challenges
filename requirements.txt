@@ -1,0 +1,3 @@
+# These requirements are for running tests, the library itself 
+# only needs a subset, see setup.py for that
+requests==2.23.0

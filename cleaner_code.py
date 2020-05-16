@@ -1,3 +1,6 @@
+import random
+
+#NotImplemented
 def test2(*args, **kwargs):
 	try:
 		match_list = []
@@ -8,15 +11,14 @@ def test2(*args, **kwargs):
 		return match_list
 	except:
 		pass
-
+#NotImplemented
 def mytime(*args, **kwargs):
 	begin_time = datetime.datetime.now()
 	print(args[0], args[1])
 	for i in range(args[1]):
 		print(args[0](args[2], arg_list=args[3]))
 	print(datetime.datetime.now() - begin_time)
-
-
+#NotImplemented
 def test(*args, **kwargs):
 	try:
 		match_list = []
@@ -29,21 +31,21 @@ def test(*args, **kwargs):
 		return match_list
 	except:
 		pass
-
+#NotImplemented
 def append_to(*a, **kw):
 	if 'to' in kw:
 		try:
 			kw['to'].append(a[0])
 		except:
 			pass
-	
+#NotImplemented
 def _match(*a, **kw):
 	return_list = []
 	for i in a[0]:
 		if i in a[1]:
 			return_list.append(i)
 	return return_list
-
+#NotImplemented
 # _unique(list t1, list t2)
 def _unique(*a, **kw):
 	return_list = set()
@@ -53,13 +55,19 @@ def _unique(*a, **kw):
 		return_list.add(i)
 	return return_list
 
-# _custom(list t1, list t2)
-def _diff_bare(*a, **kw):
-	for i in a[0]:
-		if i not in a[1]:
-			print(i)
+def gen_ran_len_lst():
+	"""Returns a random length list of random numbers."""
+	lst = []
+	for i in range(random.randrange(0, 1000)):
+		lst.append(random.randrange(0, 1000))
+	return lst
 
-def fun1(*a, **kw):
+def _diff(*a):
+	"""Returns difference between list t1, and list tn. """
+	return set.difference(*tuple(map(lambda x : set(x), a)))
+
+def if_elif_func(n=0):
+	"""Perform if elif checks on n"""
 	if n % 2 != 0:
 		print('Weird')
 	elif n % 2 == 0 and n>=2 and n<=5:
@@ -69,24 +77,20 @@ def fun1(*a, **kw):
 	elif n % 2 == 0 and n > 20:
 		print('Not Weird')
 		
-def fun2(*a, **kw):
+def read_two_ints(*a, **kw):
+	"""Perform various arithmetic on two integers."""
 	print(a[0] + a[1])
 	print(a[0] - a[1])
 	print(a[0] * a[1])
-
-def fun3(*a, **kw):
-	"""Read two integers and print two lines."""
 	print(a[0] // a[1])
-	print(a[0] // a[1])
+	print(a[0] / a[1])
 
-def fun4(*a, integer=None, *kw):
-""" Read an integer N. For all non-negative integers i < N, print i^2 """
-	
+def square_n(*a, integer=None):
+	"""Read an integer N. Print n^2 for i<N. """
 	for i in range(0, integer):
 		print(int(i)**2)
 
-
-def leap(*a, **kw):
+def leap(year=0, *a, **kw):
 	"""Calculate georgian leap year. """
 	year_div_4 = (year % 4) == 0
 	year_div_100 = (year % 100) == 0
@@ -99,7 +103,8 @@ def leap(*a, **kw):
 		return True
 	return False
 
-def fun5(*a, **kw):
-	#set A
-	a_set = set()
-	sets = [a_set]*n
+if __name__ == "__main__":
+	print("Cleaner code in progress - Cameron Olson")
+	print("Run by typing python -i .\cleaner_code.py and try typing \
+		\n'dir()' to see what cleaner functions do! \
+		\nand type help(function) for more info")
